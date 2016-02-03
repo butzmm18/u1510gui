@@ -140,11 +140,11 @@ Vagrant.configure(2) do |config|
 #    go version
 #    echo '--'
 
-#    echo '---- INSTALLING JAVA 8 COMPILER'
-#    apt-get install -y openjdk-8-jdk
-#    javac -version
-#    java -version
-#    echo '--'
+    echo '---- INSTALLING JAVA 8 COMPILER'
+    apt-get install -y openjdk-8-jdk
+    javac -version
+    java -version
+    echo '--'
 
 #    echo '---- INSTALLING CLOJURE'
 #    apt-get install -y clojure1.6
@@ -174,77 +174,76 @@ Vagrant.configure(2) do |config|
 #    echo '--'
 
 
-#    echo '-----------------------------------------------------------------------------------------------'
-#    echo '---- INSTALLING APACHE2, MYSQL, AND TOMCAT SERVERS'
-#    echo '-----------------------------------------------------------------------------------------------'
+    echo '-----------------------------------------------------------------------------------------------'
+    echo '---- INSTALLING APACHE2, MYSQL, AND TOMCAT SERVERS'
+    echo '-----------------------------------------------------------------------------------------------'
     
-#    apt-get install -y apache2
-#    echo '--'
+    apt-get install -y apache2
+    echo '--'
 
-#    echo '---- INSTALLING PHP5'
-#    apt-get install -y php5 php5-mysql libapache2-mod-php5 php5-gd php5-imagick
-#    echo '--'
+    echo '---- INSTALLING PHP5'
+    apt-get install -y php5 php5-mysql libapache2-mod-php5 php5-gd php5-imagick
+    echo '--'
 
-#    echo '---- INSTALLING MYSQL WITH NO ROOT PASSWORD'
-#    DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
-#    echo '--'
+    echo '---- INSTALLING MYSQL WITH NO ROOT PASSWORD'
+    DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
+    echo '--'
 
-#    echo '---- INSTALLING TOMCAT JAVA WEB SERVER'
-#    apt-get install -y tomcat8 tomcat8-docs tomcat8-admin tomcat8-examples
-#    service tomcat8 status
-#    echo '--'
+    echo '---- INSTALLING TOMCAT JAVA WEB SERVER'
+    apt-get install -y tomcat8 tomcat8-docs tomcat8-admin tomcat8-examples
+    service tomcat8 status
+    echo '--'
 
-
-#    echo '-----------------------------------------------------------------------------------------------'
-#    echo '---- CONFIGURE APACHE2 AND TOMCAT WORKSPACES'
-#    echo '-----------------------------------------------------------------------------------------------'
+    echo '-----------------------------------------------------------------------------------------------'
+    echo '---- CONFIGURE APACHE2 AND TOMCAT WORKSPACES'
+    echo '-----------------------------------------------------------------------------------------------'
     
-#    echo '---- SET DEFAULT APACHE2 WEB DIRECTORY TO /vagrant/html'
-#    echo '---- VIEW WEB PROGRAMS IN BROWSER AT localhost:8000'
-#    service apache2 stop
-#    rm -rf /var/www/html
-#    mkdir /vagrant/html
-#    ln -s /vagrant/html /var/www/html
-#    echo '<html><body><h1>Hello world from Apache2</h1></body></html>' > /vagrant/html/testhtml.html
-#    service apache2 start
-#    echo '--'
+    echo '---- SET DEFAULT APACHE2 WEB DIRECTORY TO /vagrant/html'
+    echo '---- VIEW WEB PROGRAMS IN BROWSER AT localhost:8000'
+    service apache2 stop
+    rm -rf /var/www/html
+    mkdir /vagrant/html
+    ln -s /vagrant/html /var/www/html
+    echo '<html><body><h1>Hello world from Apache2</h1></body></html>' > /vagrant/html/testhtml.html
+    service apache2 start
+    echo '--'
 
-#    echo '---- SET THE TOMCAT ADMIN USER: vagrant'
-#    echo '---- SET THE TOMCAT ADMIN PASSWORD: mucis'
-#    echo '---- UPLOAD AND RUN JSP PROGRAMS AT BROWSER URL OF: localhost:9000'
-#    sed -i 's/<\\/tomcat-users>/  <user username="vagrant" password="mucis" roles="manager-gui,admin-gui"\\/><\\/tomcat-users>/' /etc/tomcat8/tomcat-users.xml
-#    service tomcat8 restart
-#    echo '--'
-
-
-#    echo '-----------------------------------------------------------------------------------------------'
-#    echo '---- INSTALLING GUI ENVIRONMENT'
-#    echo '---- BRING UP GUI ENVIRONMENT USING: vagrant rdp'
-#    echo '---- OR LAUNCH SEPARATE REMOTE DESKTOP FROM WINDOWS OR OS X USING: localhost:7000'
-#    echo '-----------------------------------------------------------------------------------------------'
-
-#    echo '---- INSTALLING REMOTE DESKTOP AND MATE GUI'
-#    apt-get install -y xrdp
-#    sed -i 's/.*\/etc\/X11\/Xsession/mate-session/' /etc/xrdp/startwm.sh
-
-#    apt-get install -y mate-desktop-environment-core
-#    apt-get install -y mate-themes ubuntu-mate-wallpapers-utopic ubuntu-mate-wallpapers-vivid
-#    apt-get install -y fonts-inconsolata fonts-dejavu fonts-droid fonts-liberation fonts-ubuntu-font-family-console
-#    apt-get install -y xterm vim-gnome gdebi-core pluma 
-#    apt-get install -y firefox
-#    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#    gdebi -n google-chrome-stable_current_amd64.deb
-#    rm -f google-chrome-stable_current_amd64.deb
-#    echo '--'
-
-#    echo '---- INSTALLING PYTHON3 TK GRAPHICS LIBRARY'
-#    apt-get install -y python3-tk
-#    echo '--'
+    echo '---- SET THE TOMCAT ADMIN USER: vagrant'
+    echo '---- SET THE TOMCAT ADMIN PASSWORD: mucis'
+    echo '---- UPLOAD AND RUN JSP PROGRAMS AT BROWSER URL OF: localhost:9000'
+    sed -i 's/<\\/tomcat-users>/  <user username="vagrant" password="mucis" roles="manager-gui,admin-gui"\\/><\\/tomcat-users>/' /etc/tomcat8/tomcat-users.xml
+    service tomcat8 restart
+    echo '--'
 
 
-#    echo '-----------------------------------------------------------------------------------------------'
-#    echo '---- INSTALLING GUI IDEs'
-#    echo '-----------------------------------------------------------------------------------------------'
+    echo '-----------------------------------------------------------------------------------------------'
+    echo '---- INSTALLING GUI ENVIRONMENT'
+    echo '---- BRING UP GUI ENVIRONMENT USING: vagrant rdp'
+    echo '---- OR LAUNCH SEPARATE REMOTE DESKTOP FROM WINDOWS OR OS X USING: localhost:7000'
+    echo '-----------------------------------------------------------------------------------------------'
+
+    echo '---- INSTALLING REMOTE DESKTOP AND MATE GUI'
+    apt-get install -y xrdp
+    sed -i 's/.*\/etc\/X11\/Xsession/mate-session/' /etc/xrdp/startwm.sh
+
+    apt-get install -y mate-desktop-environment-core
+    apt-get install -y mate-themes ubuntu-mate-wallpapers-utopic ubuntu-mate-wallpapers-vivid
+    apt-get install -y fonts-inconsolata fonts-dejavu fonts-droid fonts-liberation fonts-ubuntu-font-family-console
+    apt-get install -y xterm vim-gnome gdebi-core pluma 
+    apt-get install -y firefox
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    gdebi -n google-chrome-stable_current_amd64.deb
+    rm -f google-chrome-stable_current_amd64.deb
+    echo '--'
+
+    echo '---- INSTALLING PYTHON3 TK GRAPHICS LIBRARY'
+    apt-get install -y python3-tk
+    echo '--'
+
+
+    echo '-----------------------------------------------------------------------------------------------'
+    echo '---- INSTALLING GUI IDEs'
+    echo '-----------------------------------------------------------------------------------------------'
 
 #    echo '---- INSTALLING C, C++, C# Mono IDE'
 #    apt-get install -y monodevelop
@@ -257,9 +256,9 @@ Vagrant.configure(2) do |config|
 #    echo 'RUN AS: ~/sts-bundle/sts-3.7.2.RELEASE/STS'
 #    echo '--'
 
-#    echo '---- INSTALLING NETBEANS IDE (as of 20160118 installling older version 8.0.2)'
-#    apt-get install -y netbeans
-#    echo '--'
+    echo '---- INSTALLING NETBEANS IDE (as of 20160118 installling older version 8.0.2)'
+    apt-get install -y netbeans
+    echo '--'
 
     echo 'Ending shell script at:'
     date
